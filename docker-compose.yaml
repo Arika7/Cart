@@ -1,0 +1,26 @@
+version: '3.9'
+
+services:
+  postgres:
+    image: postgres:14-alpine
+    ports:
+      - 5432:5432
+    volumes:
+      - ~/apps/postgres:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=postgres
+
+  redis:
+    container_name: redis-ms2
+    image: redis
+    volumes:
+      - db_data:/var/lib/redis
+    ports:
+      - "6380:6379"
+
+
+
+volumes:
+  db_data: {}
