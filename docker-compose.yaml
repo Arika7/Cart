@@ -12,13 +12,13 @@ services:
       - POSTGRES_USER=postgres
       - POSTGRES_DB=postgres
 
-  redis:
-    container_name: redis-ms2
-    image: redis
-    volumes:
-      - db_data:/var/lib/redis
-    ports:
-      - "6380:6379"
+#  redis:
+#    container_name: redis-ms2
+#    image: redis
+#    volumes:
+#      - db_data:/var/lib/redis
+#    ports:
+#      - "6380:6379"
 
 
 
