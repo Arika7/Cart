@@ -2,6 +2,8 @@ package com.example.shoppingcart.models;
 
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -15,7 +17,8 @@ public class Cart implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
-
+    @NotBlank
+            @Size(min= 3 , max = 5, message = "Name must be between 3 and 50 characters")
     String name;
 
     @ManyToMany

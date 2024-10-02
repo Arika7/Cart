@@ -4,6 +4,7 @@ package com.example.shoppingcart.controllers;
 import com.example.shoppingcart.models.Cart;
 import com.example.shoppingcart.models.Product;
 import com.example.shoppingcart.services.CartService;
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -22,7 +23,7 @@ public class CartController {
     }
 
     @PostMapping
-    public void addCart(@RequestBody Cart cart){
+    public void addCart(@RequestBody @Valid Cart cart){
         cartService.create(cart);
     }
 
